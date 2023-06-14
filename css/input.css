@@ -10,6 +10,9 @@ body {
     font-family: 'Inter', sans-serif;
     @apply text-regularColor;
 }
+img {
+    width: 100%;
+}
 
 input, input:focus {
     outline: none;

@@ -7,8 +7,8 @@
     <title>GitFinder - Find a Github user</title>
 </head>
 <body class="">
-    <div class="page p-10">
-        <div class="navbar flex justify-between items-center md:my-10">
+    <div class="page">
+        <div class="navbar flex justify-between items-center p-5 border-1 border-b border-borderColor">
             <div class="logo">
                 <p class="text-3xl font-black tracking-tighter text-boldColor">GitFinder</p>
             </div>
@@ -16,12 +16,43 @@
                 <button>night</button>
             </div>
         </div>
-        <div class="md:w-3/6 text-center my-16 mx-auto">
+        <div class="search-form-container md:w-3/6 text-center my-16 mx-auto">
             <h2 class="text-3xl md:text-5xl font-black text-boldColor">Find a Github user</h2>
             <div class="search-form mt-5">
                 <input type="text" name="username" id="username" placeholder="Type a username here" class="block w-full rounded-md border-0 text-gray-900 shadow-md focus:shadow-lg ring-1 ring-inset ring-borderColor placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 p-5">
             </div>
+            <div class="search-result my-10">
+                <div class="users">
+                    <div class="user flex items-center rounded-md border-0 ring-1 ring-inset ring-borderColor p-3 my-3">
+                        <span class="block user-avatar w-12 mx-5">
+                            <img class="rounded-full" src="https://avatars.githubusercontent.com/u/58623250?v=4" alt="user avatar" srcset="">
+                        </span>
+                        <span class="block">
+                            <p class="font-black text-boldColor">Uncle-sam-mako</p>
+                            <p class="text-sm">Full-Stack Developer</p>
+                        </span>
+                    </div>
+                    <div class="user flex items-center rounded-md border-0 ring-1 ring-inset ring-borderColor p-3 my-3">
+                        <span class="block user-avatar w-12 mx-5">
+                            <img class="rounded-full" src="https://avatars.githubusercontent.com/u/58623250?v=4" alt="user avatar" srcset="">
+                        </span>
+                        <span class="block">
+                            <p class="font-black text-boldColor">Uncle-sam-mako</p>
+                            <p class="text-sm">Full-Stack Developer</p>
+                        </span>
+                    </div>
+                    <div class="user flex items-center rounded-md border-0 ring-1 ring-inset ring-borderColor p-3 my-3">
+                        <span class="block user-avatar w-12 h-12 rounded-full mx-5 bg-skeleton">
+                        </span>
+                        <span class="block">
+                            <p class="bg-skeleton rounded-lg h-4 w-36"></p>
+                            <p class="bg-skeleton rounded-lg h-3 w-36 mt-2"></p>
+                        </span>
+                    </div>
+                </div>
+            </div>
         </div>
+        
     </div>
 </body>
 </html>
