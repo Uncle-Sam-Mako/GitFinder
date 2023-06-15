@@ -6,8 +6,8 @@
     <link href="/dist/output.css" rel="stylesheet">
     <title>GitFinder - Find a Github user</title>
 </head>
-<body class="">
-    <div class="page">
+<body class="w-full">
+    <div class="page h-full relative">
         <div class="navbar flex justify-between items-center p-5 border-1 border-b border-borderColor">
             <div class="logo">
                 <p class="text-3xl font-black tracking-tighter text-boldColor">GitFinder</p>
@@ -79,8 +79,30 @@
                 </div>
             </div>
         </div>
-        
+        <div class="user-modal absolute z-10 w-3/6 p-5 grid grid-cols-2 shadow-lg bg-white border border-borderColor rounded-md left-1/4 top-1/2 -translate-y-1/2">
+            <div class="user-identity text-center">
+                <span class="user-avatar block">
+                    <img class="w-36 rounded-full mx-auto my-2 shadow-lg" src="https://avatars.githubusercontent.com/u/58623250?v=4" alt="user avatar">
+                </span>
+                <span class="user-name-container">
+                    <p class="user-name font-black text-boldColor">Uncle Sam</p>
+                </span>
+                <span class="user-login-container">
+                    <p class="user-login">Uncle-Sam-Mako</p>
+                </span>
+                <span class="user-bio-container">
+                    <p class="user-bio text-sm">Full-Stack Web Developer</p>
+                </span>
+                <span class="user-github-btn-container block my-2">
+                    <button class="user-github-btn text-sm bg-green-600 hover:bg-green-500 px-3 py-2 rounded-md text-white">View profile on Github</button>
+                </span>
+            </div>
+        </div>
     </div>
+    
+    
+
+      
 </body>
 </html>
 
