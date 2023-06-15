@@ -17,3 +17,19 @@ img {
 input, input:focus {
     outline: none;
 }
+
+.bg-skeleton {
+    animation: skeleton 2s ease infinite;
+}
+
+@keyframes skeleton {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}

@@ -627,6 +627,22 @@ video {
   inset-inline-end: 0.25rem;
 }
 
+.top-0 {
+  top: 0px;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.-top-0 {
+  top: -0px;
+}
+
+.-top-3 {
+  top: -0.75rem;
+}
+
 .isolate {
   isolation: isolate;
 }
@@ -1773,7 +1789,7 @@ video {
 
 .border-borderColor {
   --tw-border-opacity: 1;
-  border-color: rgb(148 163 184 / var(--tw-border-opacity));
+  border-color: rgb(226 232 240 / var(--tw-border-opacity));
 }
 
 .bg-\[rgb\(255\2c 0\2c 0\)\] {
@@ -1783,7 +1799,7 @@ video {
 
 .bg-skeleton {
   --tw-bg-opacity: 1;
-  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
 
 .decoration-slice {
@@ -2294,7 +2310,7 @@ video {
 
 .ring-borderColor {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(148 163 184 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(226 232 240 / var(--tw-ring-opacity));
 }
 
 .blur {
@@ -2405,6 +2421,24 @@ img {
 
 input, input:focus {
   outline: none;
+}
+
+.bg-skeleton {
+  animation: skeleton 2s ease infinite;
+}
+
+@keyframes skeleton {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @media (min-width: 640px) {
