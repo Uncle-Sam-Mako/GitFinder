@@ -79,16 +79,13 @@
                 </div>
             </div>
         </div>
-        <div class="user-modal absolute z-10 w-3/6 p-5 grid grid-cols-2 shadow-lg bg-white border border-borderColor rounded-md left-1/4 top-1/2 -translate-y-1/2">
+        <div class="user-modal absolute z-10 w-3/6 p-5 grid grid-cols-2 items-center justify-between shadow-lg bg-white border border-borderColor rounded-md left-1/4 top-1/2 -translate-y-1/2">
             <div class="user-identity text-center">
                 <span class="user-avatar block">
                     <img class="w-36 rounded-full mx-auto my-2 shadow-lg" src="https://avatars.githubusercontent.com/u/58623250?v=4" alt="user avatar">
                 </span>
                 <span class="user-name-container">
                     <p class="user-name font-black text-boldColor">Uncle Sam</p>
-                </span>
-                <span class="user-login-container">
-                    <p class="user-login">Uncle-Sam-Mako</p>
                 </span>
                 <span class="user-bio-container">
                     <p class="user-bio text-sm">Full-Stack Web Developer</p>
@@ -99,23 +96,32 @@
             </div>
             <div class="user-github-infos">
                 <ul>
-                    <li class="location flex items-center gap-2">
-                        <i class="fa fa-map-marker"></i>
+                    <li class="username flex items-center gap-2 my-2">
+                        <i class="fa fa-user w-5 text-center"></i>
+                        <p>Uncle-Sam-Mako</p>
+                    </li>
+                    <li class="location flex items-center gap-2 my-2">
+                        <i class="fa fa-map-marker w-5 text-center"></i>
                         <p>Lubumbashi, DRC</p>
                     </li>
-                    <li class="followers_followings flex items-center gap-2">
-                        <i class="fa fa-users"></i>
+                    <li class="followers_followings flex items-center gap-2 my-2">
+                        <i class="fa fa-users w-5 text-center"></i>
                         <p><strong>4</strong> followers</p>
                         <p><strong>9</strong> following</p>
                     </li>
-                    <li class="company flex items-center gap-2">
-                        <i class="fa fa-building"></i>
+                    <li class="company flex items-center gap-2 my-2">
+                        <i class="fa fa-building w-5 text-center"></i>
                         <p>Freelance</p>
                     </li>
-                    <li class="company flex items-center gap-2">
-                        <i class="fa fa-folder-open"></i>
-                        <p><strong>20</strong> repositories</p>
+                    <li class="public_repos flex items-center gap-2 my-2">
+                        <i class="fa fa-folder-open w-5 text-center"></i>
+                        <p><strong>20</strong> public repositories</p>
                     </li>
+                    <li class="private_repos flex items-center gap-2 my-2">
+                        <i class="fa fa-folder-open w-5 text-center"></i>
+                        <p><strong>20</strong> private repositories</p>
+                    </li>
+
                 </ul>
             </div>
         </div>
