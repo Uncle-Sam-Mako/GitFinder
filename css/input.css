@@ -24,8 +24,7 @@ input, input:focus {
     @apply bg-skeleton;
     margin-bottom: 5px;
 }
-.skeleton_bold_text,
-.skeleton_normal_text {
+.skeleton_text {
     @apply rounded-lg;
 }
 
