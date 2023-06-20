@@ -19,9 +19,18 @@ input, input:focus {
     outline: none;
 }
 
-.bg-skeleton {
+.skeleton {
     animation: skeleton 2s ease infinite;
+    @apply bg-skeleton;
+    margin-bottom: 5px;
 }
+.skeleton_bold_text,
+.skeleton_normal_text {
+    @apply rounded-lg;
+}
+
+
+
 
 @keyframes skeleton {
     0% {

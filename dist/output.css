@@ -623,24 +623,24 @@ video {
   inset: -0.25rem;
 }
 
-.-top-3 {
-  top: -0.75rem;
-}
-
 .end-1 {
   inset-inline-end: 0.25rem;
-}
-
-.left-0 {
-  left: 0px;
 }
 
 .left-1\/4 {
   left: 25%;
 }
 
+.left-11 {
+  left: 2.75rem;
+}
+
 .top-1\/2 {
   top: 50%;
+}
+
+.top-5 {
+  top: 1.25rem;
 }
 
 .isolate {
@@ -824,12 +824,20 @@ video {
   height: 3rem;
 }
 
-.h-3 {
-  height: 0.75rem;
+.h-36 {
+  height: 9rem;
 }
 
 .h-4 {
   height: 1rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-9 {
+  height: 2.25rem;
 }
 
 .h-full {
@@ -846,6 +854,14 @@ video {
 
 .w-36 {
   width: 9rem;
+}
+
+.w-4\/6 {
+  width: 66.666667%;
+}
+
+.w-40 {
+  width: 10rem;
 }
 
 .w-5 {
@@ -2499,8 +2515,16 @@ input, input:focus {
   outline: none;
 }
 
-.bg-skeleton {
+.skeleton {
   animation: skeleton 2s ease infinite;
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+  margin-bottom: 5px;
+}
+
+.skeleton_bold_text,
+.skeleton_normal_text {
+  border-radius: 0.5rem;
 }
 
 @keyframes skeleton {
@@ -2612,6 +2636,14 @@ input, input:focus {
 }
 
 @media (min-width: 640px) {
+  .sm\:w-4\/6 {
+    width: 66.666667%;
+  }
+
+  .sm\:w-3\/6 {
+    width: 50%;
+  }
+
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
