@@ -21,7 +21,7 @@ input, input:focus {
 
 .skeleton {
     animation: skeleton 2s ease infinite;
-    @apply bg-skeleton;
+    @apply bg-slate-300 dark:bg-slate-500;
     margin-bottom: 5px;
 }
 .skeleton_text {
