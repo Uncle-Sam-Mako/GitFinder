@@ -5,16 +5,14 @@
   //Clone user element template
   const template_container = document.querySelector(".search_result_container");
   const user_template = document.querySelector(".search_result_template");
-  for (let i = 0; i < 6; i++) {
-    template_container.append(user_template.content.cloneNode(true));
-  }
+  
 
 
 
-
+const search_form = document.getElementById('search_form');
 
 const url = `https://api.github.com/search/users?q=`;
-const token = "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";
+const token = "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";
 const headers = {
   'Accept': 'application/vnd.github+json',
   'Authorization' : `Bearer ${token}`,
@@ -51,7 +49,17 @@ async function getUsers(prompt) {
 }
 
 
-getUsers("bernard");
+search_form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const prompt = search_form.querySelector('input').value
+  template_container.innerHTML = "";
+  
+  for (let i = 0; i < 6; i++) {
+    template_container.append(user_template.content.cloneNode(true));
+  }
+  getUsers(prompt)
+})
 
 
 
