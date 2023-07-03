@@ -19,8 +19,8 @@
                 </button>
             </div>
         </div>
-        <div class="search-form-container md:w-3/6 text-center my-16 mx-auto px-5">
-            <h2 class="text-3xl md:text-5xl font-black text-slate-800 dark:text-slate-100">Find a Github user</h2>
+        <div class="search-form-container md:w-3/6 my-16 mx-auto px-5">
+            <h2 class="text-center md:text-5xl font-black text-slate-800 dark:text-slate-100">Find a Github user</h2>
             <div class="search-form mt-5">
                 <input type="text" name="username" id="username" value="Uncle-Sam-Mako" placeholder="Type a username here" class="block w-full rounded-md border-0 text-gray-900 dark:text-zinc-300 shadow-md focus:shadow-lg ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 placeholder:text-slate-600 placeholder:dark:text-zinc-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 p-5 dark:bg-zinc-900">
             </div>
@@ -28,11 +28,15 @@
                 <template class="search_result_template">
                     <div class="flex items-center rounded-md border-0 ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 p-3 my-3">
                         <span class="block user-avatar mx-5">
-                            <img class="profile_photo rounded-full w-12 h-12 skeleton">
+                            <img class="profile_photo rounded-full w-12 h-12 block object-cover skeleton">
                         </span>
                         <span class="block w-full">
-                            <p class="username font-black text-slate-800 dark:text-slate-100 skeleton skeleton_text sm:w-4/6 h-4"></p>
-                            <p class="user_url text-sm skeleton skeleton_text sm:w-3/6 h-4"></p>
+                            <div class="username font-black text-slate-800 dark:text-slate-100">
+                                <p class="skeleton skeleton_text sm:w-4/6 h-4"></p>
+                            </div>
+                            <div class="user_url text-sm ">
+                                <p class="skeleton skeleton_text sm:w-3/6 h-4"></p>
+                            </div>
                         </span>
                     </div>
                 </template>

@@ -20,7 +20,7 @@ input, input:focus {
 }
 
 .skeleton {
-    animation: skeleton 2s ease infinite;
+    animation: skeleton 2s ease-in-out infinite alternate;
     @apply bg-slate-300 dark:bg-zinc-600;
     margin-bottom: 5px;
 }
@@ -33,12 +33,9 @@ input, input:focus {
 
 @keyframes skeleton {
     0% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
+        @apply dark:bg-zinc-600
     }
     100% {
-        opacity: 1;
+        @apply dark:bg-zinc-800
     }
 }

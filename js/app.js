@@ -14,7 +14,7 @@
 
 
 const url = `https://api.github.com/search/users?q=`;
-const token = "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";
+const token = "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";
 const headers = {
   'Accept': 'application/vnd.github+json',
   'Authorization' : `Bearer ${token}`,
@@ -30,20 +30,20 @@ async function getUsers(prompt) {
     .then(response => response.json())
     .then(data => {
 
-      const users = data['items']
+      const users = data['items'];
       template_container.innerHTML = "";
 
       users.forEach(user => {
         const div = user_template.content.cloneNode(true);
         div.querySelector('.profile_photo').src = user.avatar_url;
-        div.querySelector('.username').innerHTML = user.login;
+        div.querySelector('.username').textContent = user.login;
         div.querySelector('.user_url').innerHTML = user.html_url;
         template_container.appendChild(div)
 
       })
 
 
-      console.log(users['items'], typeof(users.items))
+      console.log(data)
     })
     .catch(error => {
       console.error(error)
@@ -51,7 +51,7 @@ async function getUsers(prompt) {
 }
 
 
-getUsers("samuel");
+getUsers("bernard");
 
 
 
