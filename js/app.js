@@ -1,4 +1,19 @@
 
+
+
+function showUserSkeleton() {
+  //Clone user element template
+  const container = document.querySelector(".search_result_container");
+  const cardTemplate = document.querySelector(".search_result_template");
+  for (let i = 0; 6 < 10; i++) {
+    container.append(cardTemplate.content.cloneNode(true));
+  }
+}
+
+
+
+
+
 const url = `https://api.github.com/search/users?q=`;
 const token = "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";
 const headers = {

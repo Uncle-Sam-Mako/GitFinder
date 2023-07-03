@@ -25,19 +25,17 @@
                 <input type="text" name="username" id="username" value="Uncle-Sam-Mako" placeholder="Type a username here" class="block w-full rounded-md border-0 text-gray-900 dark:text-zinc-300 shadow-md focus:shadow-lg ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 placeholder:text-slate-600 placeholder:dark:text-zinc-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 p-5 dark:bg-zinc-900">
             </div>
             <div class="search_result_container my-10 px-5">
-                <div class=" relative">
-                    <div class="search_result_template">
-                        <div class="search_result_template flex items-center rounded-md border-0 ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 p-3 my-3">
-                            <span class="block user-avatar mx-5">
-                                <img class="rounded-full w-12 h-12 skeleton" alt="user avatar" srcset="">
-                            </span>
-                            <span class="block w-full">
-                                <p class="font-black text-slate-800 dark:text-slate-100 skeleton skeleton_text sm:w-4/6 h-4"></p>
-                                <p class="text-sm skeleton skeleton_text sm:w-3/6 h-4"></p>
-                            </span>
-                        </div>
+                <template class="search_result_template">
+                    <div class="flex items-center rounded-md border-0 ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 p-3 my-3">
+                        <span class="block user-avatar mx-5">
+                            <img class="rounded-full w-12 h-12 skeleton" alt="user avatar" srcset="">
+                        </span>
+                        <span class="block w-full">
+                            <p class="font-black text-slate-800 dark:text-slate-100 skeleton skeleton_text sm:w-4/6 h-4"></p>
+                            <p class="text-sm skeleton skeleton_text sm:w-3/6 h-4"></p>
+                        </span>
                     </div>
-                </div>
+                </template>
             </div>
         </div>
 
