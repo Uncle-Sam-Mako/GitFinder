@@ -28,8 +28,18 @@ input, input:focus {
     @apply rounded-lg;
 }
 
+.user {
+    transition: .3s ease-in-out;
+    cursor: pointer;
+}
 
-
+.profile_photo {
+    height: 3em;
+    width: 3em;
+    -o-object-fit: cover;
+       object-fit: cover;
+    border-radius: 50%;
+  }
 
 @keyframes skeleton {
     0% {

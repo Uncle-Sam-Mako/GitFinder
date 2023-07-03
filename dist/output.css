@@ -865,6 +865,10 @@ video {
   width: 100%;
 }
 
+.max-w-none {
+  max-width: none;
+}
+
 .flex-shrink {
   flex-shrink: 1;
 }
@@ -2542,6 +2546,19 @@ input, input:focus {
   border-radius: 0.5rem;
 }
 
+.user {
+  transition: .3s ease-in-out;
+  cursor: pointer;
+}
+
+.profile_photo {
+  height: 3em;
+  width: 3em;
+  -o-object-fit: cover;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
 @keyframes skeleton {
   @media (prefers-color-scheme: dark) {
     0% {
@@ -2605,6 +2622,11 @@ input, input:focus {
 .hover\:bg-green-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-zinc-700:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(63 63 70 / var(--tw-bg-opacity));
 }
 
 .hover\:font-bold:hover {
