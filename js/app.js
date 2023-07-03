@@ -1,14 +1,13 @@
 
 
 
-function showUserSkeleton() {
+
   //Clone user element template
-  const container = document.querySelector(".search_result_container");
-  const cardTemplate = document.querySelector(".search_result_template");
-  for (let i = 0; 6 < 10; i++) {
-    container.append(cardTemplate.content.cloneNode(true));
+  const template_container = document.querySelector(".search_result_container");
+  const user_template = document.querySelector(".search_result_template");
+  for (let i = 0; i < 6; i++) {
+    template_container.append(user_template.content.cloneNode(true));
   }
-}
 
 
 
@@ -30,7 +29,21 @@ async function getUsers(prompt) {
   fetch(`${url}${prompt}`, { headers })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+
+      const users = data['items']
+      template_container.innerHTML = "";
+
+      users.forEach(user => {
+        const div = user_template.content.cloneNode(true);
+        div.querySelector('.profile_photo').src = user.avatar_url;
+        div.querySelector('.username').innerHTML = user.login;
+        div.querySelector('.user_url').innerHTML = user.html_url;
+        template_container.appendChild(div)
+
+      })
+
+
+      console.log(users['items'], typeof(users.items))
     })
     .catch(error => {
       console.error(error)
