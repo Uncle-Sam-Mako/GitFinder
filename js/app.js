@@ -1,44 +1,39 @@
 
+const TOKEN = "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";
 
+const search_users_url = `https://api.github.com/search/users?q=`;
 
+const get_user_url = 'https://api.github.com/'
 
-  //Clone user element template
-  const template_container = document.querySelector(".search_result_container");
-  const user_template = document.querySelector(".search_result_template");
-  
-
-
-
-const search_form = document.getElementById('search_form');
-
-const url = `https://api.github.com/search/users?q=`;
-const token = "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";
 const headers = {
   'Accept': 'application/vnd.github+json',
-  'Authorization' : `Bearer ${token}`,
+  'Authorization' : `Bearer ${TOKEN}`,
   'X-GitHub-Api-Version' : '2022-11-28'
 }
 
-
+//Clone user element template
+const template_container = document.querySelector(".search_result_container");
+const user_template = document.querySelector(".search_result_template");
+  
+const search_form = document.getElementById('search_form');
 
 
 async function getUsers(prompt) {
     
-  fetch(`${url}${prompt}`, { headers })
+  fetch(`${search_users_url}${prompt}`, { headers })
     .then(response => response.json())
     .then(data => {
+        const users = data['items'];
+        template_container.innerHTML = "";
 
-      const users = data['items'];
-      template_container.innerHTML = "";
+        users.forEach(user => {
+          const div = user_template.content.cloneNode(true);
+          div.querySelector('.profile_photo').src = user.avatar_url;
+          div.querySelector('.username').textContent = user.login;
+          div.querySelector('.user_url').innerHTML = user.html_url;
+          template_container.appendChild(div)
 
-      users.forEach(user => {
-        const div = user_template.content.cloneNode(true);
-        div.querySelector('.profile_photo').src = user.avatar_url;
-        div.querySelector('.username').textContent = user.login;
-        div.querySelector('.user_url').innerHTML = user.html_url;
-        template_container.appendChild(div)
-
-      })
+        })
 
 
       console.log(data)

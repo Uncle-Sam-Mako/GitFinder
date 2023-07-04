@@ -19,14 +19,14 @@
                 </button>
             </div>
         </div>
-        <div class="search-form-container md:w-3/6 my-16 mx-auto px-5">
+        <div class="search-form-container md:w-3/6 my-16 mx-auto sm:px-5 px-2">
             <h2 class="text-center md:text-5xl text-3xl font-black text-slate-800 dark:text-slate-100">Find a Github user</h2>
             <div class="search-form mt-5">
                 <form action="" id="search_form">
                     <input type="search" name="username" id="username" value="Uncle-Sam-Mako" placeholder="Type a username here" class="block w-full rounded-md border-0 text-gray-900 dark:text-zinc-300 shadow-md focus:shadow-lg ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 placeholder:text-slate-600 placeholder:dark:text-zinc-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6 p-5 dark:bg-zinc-900">
                 </form>
             </div>
-            <div class="search_result_container my-10 px-5">
+            <div class="search_result_container my-10 sm:px-5">
                 <template class="search_result_template">
                     <div class="user flex items-center rounded-md hover:bg-zinc-700 border-0 ring-1 ring-inset ring-slate-200 dark:ring-zinc-600 p-3 my-3">
                         <span class="block user-avatar mx-5">
@@ -43,56 +43,6 @@
                     </div>
                 </template>
             </div>
-        </div>
-
-
-        <div class="user_modal_container hidden absolute z-10 md:w-7/12 sm:w-9/12 w-11/12 p-5 shadow-lg bg-white border border-slate-200 rounded-md top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-            <template class="user_modal_template sm:grid grid-cols-2 items-center justify-between">
-                <div class="user-identity text-center">
-                    <span class="user-avatar block">
-                        <img class="w-36 h-36 rounded-full mx-auto my-2 skeleton" alt="user avatar">
-                    </span>
-                    <span class="user-name-container">
-                        <p class="user-name font-black text-slate-800 dark:text-slate-100 skeleton skeleton_text mx-auto w-5/6 h-4"></p>
-                    </span>
-                    <span class="user-bio-container">
-                        <p class="user-bio text-sm skeleton skeleton_text mx-auto w-5/6 h-4"></p>
-                    </span>
-                    <span class="user-github-btn-container w-fit block mx-auto my-2">
-                        <button class="user-github-btn text-sm bg-green-600 hover:bg-green-500 px-3 py-2 rounded-md text-white">View profile on Github</button>
-                    </span>
-                </div>
-                <div class="user-github-infos text-center">
-                    <ul>
-                        <li class="username flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-user w-5 text-center"></i>
-                            <p>Uncle-Sam-Mako</p>
-                        </li>
-                        <li class="location flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-map-marker w-5 text-center"></i>
-                            <p>Lubumbashi, DRC</p>
-                        </li>
-                        <li class="followers_followings flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-users w-5 text-center"></i>
-                            <p><strong>4</strong> followers</p>
-                            <p><strong>9</strong> following</p>
-                        </li>
-                        <li class="company flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-building w-5 text-center"></i>
-                            <p>Freelance</p>
-                        </li>
-                        <li class="public_repos flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-folder-open w-5 text-center"></i>
-                            <p><strong>20</strong> public repositories</p>
-                        </li>
-                        <li class="private_repos flex items-center sm:justify-start justify-center gap-2 my-2 skeleton skeleton_text h-4">
-                            <i class="fa fa-folder-open w-5 text-center"></i>
-                            <p><strong>20</strong> private repositories</p>
-                        </li>
-    
-                    </ul>
-                </div>
-            </template>
         </div>
     </div>
     
