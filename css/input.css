@@ -20,9 +20,20 @@ input, input:focus {
 }
 
 .skeleton {
-    animation: skeleton 2s ease-in-out infinite alternate;
-    @apply bg-slate-300 dark:bg-zinc-600;
+    position: relative;
+    /* @apply bg-slate-300 dark:bg-zinc-600; */
     margin-bottom: 5px;
+    overflow: hidden;
+}
+.skeleton::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    @apply bg-slate-300 dark:bg-zinc-600;
+    animation: skeleton 1s ease-in-out infinite alternate;
 }
 .skeleton_text {
     @apply rounded-lg;
@@ -43,9 +54,9 @@ input, input:focus {
 
 @keyframes skeleton {
     0% {
-        @apply dark:bg-zinc-600
+        opacity: 1;
     }
     100% {
-        @apply dark:bg-zinc-800
+        opacity: .5;
     }
 }

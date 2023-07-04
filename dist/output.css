@@ -2526,20 +2526,32 @@ input, input:focus {
 }
 
 .skeleton {
-  animation: skeleton 2s ease-in-out infinite alternate;
+  position: relative;
+  /* @apply bg-slate-300 dark:bg-zinc-600; */
+  margin-bottom: 5px;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
 }
 
 @media (prefers-color-scheme: dark) {
-  .skeleton {
+  .skeleton::after {
     --tw-bg-opacity: 1;
     background-color: rgb(82 82 91 / var(--tw-bg-opacity));
   }
 }
 
-.skeleton {
-  margin-bottom: 5px;
+.skeleton::after {
+  animation: skeleton 1s ease-in-out infinite alternate;
 }
 
 .skeleton_text {
@@ -2560,16 +2572,12 @@ input, input:focus {
 }
 
 @keyframes skeleton {
-  @media (prefers-color-scheme: dark) {
-    0% {
-      --tw-bg-opacity: 1;
-      background-color: rgb(82 82 91 / var(--tw-bg-opacity));
-    }
+  0% {
+    opacity: 1;
+  }
 
-    100% {
-      --tw-bg-opacity: 1;
-      background-color: rgb(39 39 42 / var(--tw-bg-opacity));
-    }
+  100% {
+    opacity: .5;
   }
 }
 
