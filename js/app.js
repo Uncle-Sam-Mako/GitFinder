@@ -12,7 +12,7 @@
 const search_form = document.getElementById('search_form');
 
 const url = `https://api.github.com/search/users?q=`;
-const token = "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";
+const token = "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";
 const headers = {
   'Accept': 'application/vnd.github+json',
   'Authorization' : `Bearer ${token}`,
