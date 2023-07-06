@@ -1,5 +1,5 @@
 
-const TOKEN = "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";
+import {TOKEN} from './token.js';
 
 const search_users_url = `https://api.github.com/search/users?q=`;
 
@@ -55,9 +55,6 @@ search_form.addEventListener('submit', (e) => {
   }
   getUsers(prompt)
 })
-
-
-
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
