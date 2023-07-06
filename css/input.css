@@ -27,7 +27,7 @@ input, input:focus {
 
 .skeleton {
     position: relative;
-    @apply bg-slate-300 dark:bg-zinc-600;
+    /* @apply bg-slate-300 dark:bg-zinc-600; */
     margin-bottom: 5px;
     overflow: hidden;
 }
