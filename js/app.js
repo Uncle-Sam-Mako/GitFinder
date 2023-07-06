@@ -30,7 +30,7 @@ async function getUsers(prompt) {
           const div = user_template.content.cloneNode(true);
           div.querySelector('.profile_photo').src = user.avatar_url;
           div.querySelector('.username').textContent = user.login;
-          div.querySelector('.user_url').innerHTML = user.html_url;
+          div.querySelector('.user_login').innerHTML = user.login;
           template_container.appendChild(div)
 
         })
