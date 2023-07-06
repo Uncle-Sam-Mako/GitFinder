@@ -1,39 +1,50 @@
 
-import {TOKEN} from './token.js';
+import { TOKEN } from './token.js';
 
 const search_users_url = `https://api.github.com/search/users?q=`;
 
-const get_user_url = 'https://api.github.com/'
+const get_user_url = 'https://api.github.com/users/';
 
 const headers = {
   'Accept': 'application/vnd.github+json',
-  'Authorization' : `Bearer ${TOKEN}`,
-  'X-GitHub-Api-Version' : '2022-11-28'
+  'Authorization': `Bearer ${TOKEN}`,
+  'X-GitHub-Api-Version': '2022-11-28'
 }
 
 //Clone user element template
 const template_container = document.querySelector(".search_result_container");
 const user_template = document.querySelector(".search_result_template");
-  
+
 const search_form = document.getElementById('search_form');
 
+async function getUserInfos(user_login) {
+  fetch(`${get_user_url}${user_login}`, { headers })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data)
+    })
+    .catch(error => {
+      console.error(error);
+    })
+}
 
-async function getUsers(prompt) {
-    
+async function searchUsers(prompt) {
+
   fetch(`${search_users_url}${prompt}`, { headers })
     .then(response => response.json())
     .then(data => {
-        const users = data['items'];
-        template_container.innerHTML = "";
+      const users = data['items'];
+      template_container.innerHTML = "";
 
-        users.forEach(user => {
-          const div = user_template.content.cloneNode(true);
-          div.querySelector('.profile_photo').src = user.avatar_url;
-          div.querySelector('.username').textContent = user.login;
-          div.querySelector('.user_login').innerHTML = user.login;
-          template_container.appendChild(div)
+      users.forEach(user => {
+        const div = user_template.content.cloneNode(true);
+        div.querySelector('.profile_photo').src = user.avatar_url;
+        div.querySelector('.username').textContent = user.login;
+        div.querySelector('.user_login').innerHTML = user.login;
+        template_container.appendChild(div)
+        getUserInfos(user.login);
 
-        })
+      })
 
 
       console.log(data)
@@ -49,11 +60,11 @@ search_form.addEventListener('submit', (e) => {
 
   const prompt = search_form.querySelector('input').value
   template_container.innerHTML = "";
-  
+
   for (let i = 0; i < 6; i++) {
     template_container.append(user_template.content.cloneNode(true));
   }
-  getUsers(prompt)
+  searchUsers(prompt)
 })
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
