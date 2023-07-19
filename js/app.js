@@ -40,16 +40,16 @@ async function searchUsersAndFetchInfo(prompt) {
       // Deuxième appel fetch pour récupérer les infos détaillées de l'utilisateur
       const userResponse = await fetch(get_user_url + user.login);
       const userData = await userResponse.json();
-
+      
       div.querySelector('.username').textContent = userData.name;
       div.querySelector('.user_country').textContent = userData.location;
       div.querySelector('.user_login').innerHTML = user.login;
-      div.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + userData.public_repos;
-      div.querySelector('.user_followers').innerHTML = '<i class="fa fa-user"></i>' + userData.followers;
+      div.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + ' ' + userData.public_repos;
+      div.querySelector('.user_followers').innerHTML = '<i class="fa fa-users"></i>' + ' ' + userData.followers;
 
       // Utilisez userData pour obtenir les informations de l'utilisateur spécifique
       console.log(userData); // Vous pouvez faire ce que vous voulez avec les données récupérées
-      template_container.appendChild(div)
+      template_container.appendChild(div);
     }
   } catch (error) {
       console.error('Une erreur s\'est produite :', error);
