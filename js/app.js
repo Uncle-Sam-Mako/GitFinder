@@ -42,7 +42,10 @@ async function searchUsersAndFetchInfo(prompt) {
       const userData = await userResponse.json();
 
       div.querySelector('.username').textContent = userData.name;
+      div.querySelector('.user_country').textContent = userData.location;
       div.querySelector('.user_login').innerHTML = user.login;
+      div.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + userData.public_repos;
+      div.querySelector('.user_followers').innerHTML = '<i class="fa fa-user"></i>' + userData.followers;
 
       // Utilisez userData pour obtenir les informations de l'utilisateur spécifique
       console.log(userData); // Vous pouvez faire ce que vous voulez avec les données récupérées
