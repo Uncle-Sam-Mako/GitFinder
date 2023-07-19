@@ -14,44 +14,43 @@ const headers = {
 //Clone user element template
 const template_container = document.querySelector(".search_result_container");
 const user_template = document.querySelector(".search_result_template");
-
 const search_form = document.getElementById('search_form');
 
-async function getUserInfos(user_login) {
-  fetch(`${get_user_url}${user_login}`, { headers })
-    .then(response => response.json())
-    .then(data => {
-      console.log(data)
-    })
-    .catch(error => {
-      console.error(error);
-    })
-}
 
-async function searchUsers(prompt) {
+async function searchUsersAndFetchInfo(prompt) {
+  const search_users_url = `https://api.github.com/search/users?q=${prompt}`;
+  const get_user_url = 'https://api.github.com/users/';
 
-  fetch(`${search_users_url}${prompt}`, { headers })
-    .then(response => response.json())
-    .then(data => {
-      const users = data['items'];
-      template_container.innerHTML = "";
+  try {
+    // Premier appel fetch pour la recherche des utilisateurs
+    const response = await fetch(search_users_url);
+    const data = await response.json();
+    const users = data.items;
 
-      users.forEach(user => {
-        const div = user_template.content.cloneNode(true);
-        div.querySelector('.profile_photo').src = user.avatar_url;
-        div.querySelector('.username').textContent = user.login;
-        div.querySelector('.user_login').innerHTML = user.login;
-        template_container.appendChild(div)
-        getUserInfos(user.login);
-
-      })
+    template_container.innerHTML = "";
 
 
-      console.log(data)
-    })
-    .catch(error => {
-      console.error(error)
-    });
+    // Boucle pour traiter chaque utilisateur trouvé
+    for (const user of users) {
+      const div = user_template.content.cloneNode(true);
+
+      div.querySelector('.profile_photo').src = user.avatar_url;
+      div.querySelector('.user_login').innerHTML = user.login;
+      
+      // Deuxième appel fetch pour récupérer les infos détaillées de l'utilisateur
+      const userResponse = await fetch(get_user_url + user.login);
+      const userData = await userResponse.json();
+
+      div.querySelector('.username').textContent = userData.name;
+      div.querySelector('.user_login').innerHTML = user.login;
+
+      // Utilisez userData pour obtenir les informations de l'utilisateur spécifique
+      console.log(userData); // Vous pouvez faire ce que vous voulez avec les données récupérées
+      template_container.appendChild(div)
+    }
+  } catch (error) {
+      console.error('Une erreur s\'est produite :', error);
+  }
 }
 
 
@@ -64,7 +63,7 @@ search_form.addEventListener('submit', (e) => {
   for (let i = 0; i < 6; i++) {
     template_container.append(user_template.content.cloneNode(true));
   }
-  searchUsers(prompt)
+  searchUsersAndFetchInfo(prompt)
 })
 
 // On page load or when changing themes, best to add inline in `head` to avoid FOUC
