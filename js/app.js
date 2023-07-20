@@ -22,7 +22,7 @@ async function searchUsersAndFetchInfo(prompt) {
   const get_user_url = 'https://api.github.com/users/';
 
   try {
-    // Premier appel fetch pour la recherche des utilisateurs
+    //First fetch call for user search
     const response = await fetch(search_users_url);
     const data = await response.json();
     const users = data.items;
@@ -30,26 +30,32 @@ async function searchUsersAndFetchInfo(prompt) {
     template_container.innerHTML = "";
 
 
-    // Boucle pour traiter chaque utilisateur trouvé
+    // Loop to process each user found
     for (const user of users) {
-      const div = user_template.content.cloneNode(true);
-
-      div.querySelector('.profile_photo').src = user.avatar_url;
-      div.querySelector('.user_login').innerHTML = user.login;
+      const link = user_template.content.cloneNode(true);
       
-      // Deuxième appel fetch pour récupérer les infos détaillées de l'utilisateur
+      
+      link.querySelector('.profile_photo').src = user.avatar_url;
+      link.querySelector('.user_login').innerHTML = user.login;
+      
+      // Second fetch call to retrieve detailed user info
       const userResponse = await fetch(get_user_url + user.login);
       const userData = await userResponse.json();
       
-      div.querySelector('.username').textContent = userData.name;
-      div.querySelector('.user_country').textContent = userData.bio;
-      div.querySelector('.user_login').innerHTML = user.login;
-      div.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + ' ' + userData.public_repos;
-      div.querySelector('.user_followers').innerHTML = '<i class="fa fa-users"></i>' + ' ' + userData.followers;
+      link.querySelector('.username').textContent = userData.name;
+      link.querySelector('.user_country').textContent = userData.bio;
+      link.querySelector('.user_login').innerHTML = user.login;
+      link.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + ' ' + userData.public_repos;
+      link.querySelector('.user_followers').innerHTML = '<i class="fa fa-users"></i>' + ' ' + userData.followers;
 
-      // Utilisez userData pour obtenir les informations de l'utilisateur spécifique
-      console.log(userData); // Vous pouvez faire ce que vous voulez avec les données récupérées
-      template_container.appendChild(div);
+      // Add href attribute to link
+      link.querySelector('a').setAttribute('href', 'https://github.com/' + user.login);
+
+      // Use userData to obtain specific user information
+      console.log(userData);
+
+      template_container.appendChild(link);
+
     }
   } catch (error) {
       console.error('Une erreur s\'est produite :', error);
