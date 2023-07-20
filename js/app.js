@@ -42,7 +42,7 @@ async function searchUsersAndFetchInfo(prompt) {
       const userData = await userResponse.json();
       
       div.querySelector('.username').textContent = userData.name;
-      div.querySelector('.user_country').textContent = userData.location;
+      div.querySelector('.user_country').textContent = userData.bio;
       div.querySelector('.user_login').innerHTML = user.login;
       div.querySelector('.user_repos').innerHTML = '<i class="fa fa-folder"></i>' + ' ' + userData.public_repos;
       div.querySelector('.user_followers').innerHTML = '<i class="fa fa-users"></i>' + ' ' + userData.followers;
