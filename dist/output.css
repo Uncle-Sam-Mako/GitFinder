@@ -2005,9 +2005,9 @@ video {
   line-height: 2.25rem;
 }
 
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
 
 .text-lg {
@@ -2477,7 +2477,7 @@ video {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: 'Inter', sans-serif;
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
@@ -2718,6 +2718,11 @@ input, input:focus {
     padding-right: 1.25rem;
   }
 
+  .sm\:text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  }
+
   .sm\:text-sm {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -2739,6 +2744,11 @@ input, input:focus {
 }
 
 @media (min-width: 1024px) {
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+
   :is(.dark .dark\:lg\:hover\:\[paint-order\:markers\]:hover) {
     paint-order: markers;
   }
