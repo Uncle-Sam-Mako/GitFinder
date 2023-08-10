@@ -9,7 +9,7 @@
 body {
     min-height: 100vh;
     font-family: 'Inter', sans-serif;
-    @apply text-slate-600 dark:text-slate-200;
+    @apply text-slate-700 dark:text-zinc-400;
     
     background-image: radial-gradient(at 48% 0%, rgb(19 78 74 / 52%) 0, transparent 52%), radial-gradient(at 56% 0%, rgb(112 26 117 / 52%) 0, transparent 36%), radial-gradient(at 0% 100%, rgb(22 78 99 / 37%) 0, transparent 42%);
 }
