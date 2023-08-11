@@ -2494,6 +2494,10 @@ body {
 }
 
 body {
+  background-image: radial-gradient(at 48% 0%, rgb(19 78 74 / 5%) 0, transparent 52%), radial-gradient(at 56% 0%, rgb(112 26 117 / 52%) 0, transparent 36%), radial-gradient(at 0% 100%, rgb(22 78 99 / 37%) 0, transparent 42%);
+}
+
+.dark body {
   background-image: radial-gradient(at 48% 0%, rgb(19 78 74 / 52%) 0, transparent 52%), radial-gradient(at 56% 0%, rgb(112 26 117 / 52%) 0, transparent 36%), radial-gradient(at 0% 100%, rgb(22 78 99 / 37%) 0, transparent 42%);
 }
 
@@ -2746,9 +2750,17 @@ input, input:focus {
   .md\:w-3\/6 {
     width: 50%;
   }
+
+  .md\:w-9\/12 {
+    width: 75%;
+  }
 }
 
 @media (min-width: 1024px) {
+  .lg\:w-3\/6 {
+    width: 50%;
+  }
+
   .lg\:text-6xl {
     font-size: 3.75rem;
     line-height: 1;
