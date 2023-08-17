@@ -35,7 +35,7 @@ async function searchUsersAndFetchInfo(prompt) {
       const link = user_template.content.cloneNode(true);
       
       
-      link.querySelector('.profile_photo').src = user.avatar_url;
+      link.querySelector('.profile_photo').src = await user.avatar_url;
       link.querySelector('.user_login').innerHTML = user.login;
       
       // Second fetch call to retrieve detailed user info
